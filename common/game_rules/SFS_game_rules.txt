@@ -1,0 +1,53 @@
+
+
+allow_sfs_extra = {
+	name = "RULE_ALLOW_SFS_EXTRA"
+	group = "RULE_SFS_GAMEPLAY"
+	icon = "GFX_release_nations"
+	default = {
+		name = SFS_EXTRA_ALLOWED
+		text = "RULE_OPTION_ALLOWED"
+		desc = "RULE_ALLOW_SFS_EXTRA_ALLOWED_DESC"
+	}
+	option = {
+		name = SFS_EXTRA_BLOCKED
+		text = "RULE_OPTION_BLOCKED"
+		desc = "RULE_ALLOW_SFS_EXTRA_BLOCKED_DESC"
+	}
+}
+
+nano_nation = {
+	name = "RULE_SFS_NANO_NATION"
+	group = "RULE_SFS_GAMEPLAY"
+
+	default = {
+		name = SFS_ALLOWED
+		text = "RULE_OPTION_ALLOWED"
+		desc = "RULE_SFS_NANO_NATION_ALLOW_DESC"
+	}
+	option = {
+		name = SFS_BLOCKED
+		text = "RULE_OPTION_BLOCKED"
+		desc = "RULE_SFS_NANO_NATION_BLOCKED_DESC"
+	}
+}
+
+cze_fragmentation_status = {
+	name = "RULE_SFS_CZECHO_FRAGMENTATION"
+	group = "RULE_SFS_GAMEPLAY"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = CZE_SLO_FRAGMENTED
+		text = "SFS_CZECHO_AND_SLOVAKIA"
+		desc = "SFS_CZECHO_AND_SLOVAKIA_DESC"
+	}
+	option = {
+		name = CZE_FRAGMENTED
+		text = "SFS_CZECHO_FRAGMENTED"
+		desc = "SFS_CZECHO_FRAGMENTED_DESC"
+	}
+}

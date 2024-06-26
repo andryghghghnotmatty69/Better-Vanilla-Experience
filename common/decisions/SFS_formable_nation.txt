@@ -1,0 +1,71 @@
+reclaim_balhae_states_category = {
+
+	sfs_reclaim_balhae = {
+
+		allowed = {
+			original_tag = KOR
+		}
+		
+		available = {
+			is_subject = no
+			
+			#Korea
+			custom_trigger_tooltip = {
+				tooltip = form_country_korea_required_states_tt
+				controls_state = 525
+				controls_state = 527
+				controls_state = 1037
+				controls_state = 1038
+				controls_state = 1039
+				controls_state = 1040
+				controls_state = 1041
+				controls_state = 1042
+				controls_state = 1043
+				controls_state = 1044
+				controls_state = 1045
+				controls_state = 1046
+				controls_state = 1047
+			}
+			
+			#Southern Manchu
+			controls_state = 328
+			controls_state = 716
+			controls_state = 717
+			controls_state = 745
+			controls_state = 1049
+			
+			#Vladivostok
+			controls_state = 408
+		}
+
+		visible = {
+			original_tag = KOR
+			NOT = { has_global_flag = sfs_restored_balhae }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = BALHAE
+			hidden_effect = {
+				328 = { add_core_of = ROOT }
+				716 = { add_core_of = ROOT }
+				717 = { add_core_of = ROOT }
+				745 = { add_core_of = ROOT }
+				1049 = { add_core_of = ROOT }
+				408 = { add_core_of = ROOT }
+			}
+
+			hidden_effect = {
+				set_global_flag = sfs_restored_balhae
+			}
+			
+			set_capital = { state = 717 }
+			717 = { set_state_name = STATE_717_KOR }
+			set_province_name = { id = 3791 name = STATE_717_KOR }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+	}
+}

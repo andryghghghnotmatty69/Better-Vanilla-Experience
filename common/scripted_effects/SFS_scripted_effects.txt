@@ -1,0 +1,29 @@
+
+sfs_abandon_colony_tag = {
+	if = {
+		limit = {
+			is_subject = yes
+		}
+		if = {
+			limit = {
+				original_tag = MAL
+			}
+			set_cosmetic_tag = MAL_UK
+		}
+		else_if = {
+			limit = {
+				original_tag = BRM
+			}
+			set_cosmetic_tag = BRM_UK
+		}
+	}
+}
+
+clear_usa_candidate = {
+	clr_country_flag = CANDIDATE_BORAH
+	clr_country_flag = CANDIDATE_LANDON
+	clr_country_flag = CANDIDATE_BRECKINRIDGE
+	clr_country_flag = CANDIDATE_ROOSVELT
+	clr_country_flag = CANDIDATE_TAFT
+	clr_country_flag = CANDIDATE_WILKIE
+}

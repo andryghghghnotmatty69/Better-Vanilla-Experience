@@ -1,0 +1,37 @@
+##Europe##
+LIE = "countries/Liechtenstein.txt"
+MCO = "countries/Monaco.txt"
+ADR = "countries/Andorra.txt"
+SMR = "countries/San Marino.txt"
+MRV = "countries/Moravia.txt"
+SAR = "countries/Saar.txt"
+FLA = "countries/Flanders.txt"
+WLL = "countries/Wallonia.txt"
+#BDN = "countries/Baden.txt"
+
+##America##
+#GRL = "countries/Greenland.txt"
+NFL = "countries/New Foundland.txt"
+TEX = "countries/Texas.txt"
+ALA = "countries/Alaska.txt"
+CAL = "countries/California.txt"
+
+#Middle-East##
+BHR = "countries/Bahrain.txt"
+
+##Reich##
+BGN = "countries/Burgundy.txt"
+#MTA = "countries/Mittelafrika.txt"
+#ADV = "countries/German American Bund.txt"
+
+##Asia##
+#RYU = "countries/Ryukyu.txt"
+SAW = "countries/Sarawak.txt"
+#SNG = "countries/Singapore.txt"
+#BRU = "countries/Brunei.txt"
+#HKG = "countries/Hongkong.txt"
+#MCU = "countries/Macau.txt"
+
+##Africa##
+#LES = "countries/Lesotho.txt"
+#SWA = "countries/Swaziland.txt"
