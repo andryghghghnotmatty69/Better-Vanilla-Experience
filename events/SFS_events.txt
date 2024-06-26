@@ -1,0 +1,234 @@
+﻿
+add_namespace = sfs
+
+country_event = {  #Burgenland decision for Hungary
+	id = sfs.1
+	title = sfs.1.t
+	desc = sfs.1.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = sfs.1.a
+		ai_chance = {
+			factor = 15
+		}
+		
+		HUN = { 
+		    country_event = { hours = 5 id = sfs.101 }
+		}
+	}
+
+	option = {
+		name = sfs.1.b
+		ai_chance = {
+			factor = 10
+		}
+
+		HUN = { 
+		    country_event = { hours = 5 id = sfs.100 }
+		}
+		effect_tooltip = {
+		    HUN = { transfer_state = 980 }
+			HUN = { add_opinion_modifier = { target = GER modifier = GER_accepts_burgenland } }
+		}
+		
+	}
+}
+
+country_event = {  #Germany Accepts
+	id = sfs.100
+	title = sfs.100.t
+	desc = sfs.100.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = sfs.100.a
+
+		HUN = { transfer_state = 980 }
+		HUN = { add_opinion_modifier = { target = GER modifier = GER_accepts_burgenland } }
+		
+	}
+}
+
+country_event = {  #Germany refuses
+	id = sfs.101
+	title = sfs.101.t
+	desc = sfs.101.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+	
+	option = {         #fall back
+		name = sfs.101.a
+		ai_chance = {
+			factor = 30
+		}
+		
+		add_political_power = 25 #regain loses political power
+	}
+}
+
+country_event = { #Available 'Colonial Poltics' for Britian
+	id = sfs.2
+	
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		TAG = ENG
+		date > 1937.4.10
+		ENG = { has_completed_focus = uk_empire_focus }
+		has_game_rule = {
+			rule = allow_sfs_extra
+			option = SFS_EXTRA_ALLOWED
+		}
+	}
+	
+	immediate = {
+		ENG = { set_country_flag = sfs_can_colony_politic }
+	}
+	
+	option = {
+		name = sfs.2.a
+	}
+}
+
+# Capital selection of Austria-Hungary
+country_event = {
+	id = sfs.4
+	title = sfs.4.t
+	desc = sfs.4.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+	
+	option = {
+		name = sfs.4.a
+		ai_chance = {
+			factor = 2
+		}
+		
+		set_capital = { state = 4 }
+		add_political_power = -50
+
+	}
+	
+	option = {
+		name = sfs.4.b
+		
+		ai_chance = {
+			factor = 10
+		}
+
+	}
+}
+
+# Hitler suicide upon fall of Berlin in the war
+country_event = {
+	id = sfs.5
+	title = wtt_germany.50.t
+	desc = sfs.5.d
+	picture = GFX_report_event_german_reichstag_bombed
+
+	is_triggered_only = yes
+	
+	option = {
+		name = sfs.5.a
+		random_other_country = {
+			limit = {
+				original_tag = GER
+				has_government = fascism
+				has_civil_war = no
+			}
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Karl Dönitz"
+				desc = "POLITICS_KARL_DONITZ_DESC"
+				picture = "Portrait_Germany_Karl_Donitz.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+			set_cosmetic_tag = GER_flensburg
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					if = {
+						limit = {
+							ARG = {
+								is_ai = yes
+							}
+						}
+						ARG = {
+							add_timed_idea = { idea = fascism_drift_ARG days = 1460 }
+							country_event = { id = wtt_germany.1004 days = 1095 random = 365 }
+						}
+					}
+				}
+				90 = {}
+			}
+		}
+	}
+}
+
+# Czech becomes just Bohemia
+country_event = {
+	id = sfs.6
+	
+	trigger = {
+		original_tag = CZE
+		has_global_flag = CZE_became_czech
+		NOT = {
+			owns_state = 70
+			owns_state = 71
+			owns_state = 73
+			owns_state = 664
+			owns_state = 75
+			owns_state = 74
+			owns_state = 72
+		}
+		NOT = { has_war_with = MRV }
+		NOT = { has_global_flag = CZE_became_bohemia }
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	hidden = yes
+
+	immediate = {
+		set_cosmetic_tag = BOHEMIA
+		set_global_flag = CZE_became_bohemia
+	}
+}
+
+# Bohemia becomes Czech again
+country_event = {
+	id = sfs.7
+	
+	trigger = {
+		original_tag = CZE
+		OR = {
+			owns_state = 70
+			owns_state = 71
+			owns_state = 73
+			owns_state = 664
+		}
+		has_global_flag = CZE_became_bohemia
+	}
+
+	mean_time_to_happen = { days = 2 }
+
+	hidden = yes
+
+	immediate = {
+		set_cosmetic_tag = CZE_ONLY
+		clr_global_flag = CZE_became_bohemia
+	}
+}
