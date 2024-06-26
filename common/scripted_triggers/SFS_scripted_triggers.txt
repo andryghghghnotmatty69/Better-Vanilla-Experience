@@ -1,0 +1,126 @@
+
+is_German_country = {
+	OR = {
+		original_tag = GER
+		tag = WGR
+		tag = DDR
+		tag = DAN
+		tag = PRS
+		tag = AUS
+		tag = BAY
+		tag = WUR
+		tag = SAR
+		tag = BDN
+		tag = MEK
+		tag = RKK
+		tag = RKM
+		tag = PBM
+		tag = BGN
+		tag = GGV
+	}
+}
+
+is_German_puppet = {
+	OR = {
+		is_puppet_of = GER
+		is_puppet_of = WGR
+		is_puppet_of = DDR
+		is_puppet_of = DAN
+		is_puppet_of = PRS
+		is_puppet_of = AUS
+		is_puppet_of = BAY
+		is_puppet_of = SAR
+		is_puppet_of = WUR
+		is_puppet_of = BDN
+		is_puppet_of = MEK
+	}
+}
+
+is_German_speak = {
+	OR = {
+		is_German_country = yes
+		is_German_puppet = yes
+		has_cosmetic_tag = HUN_EMPIRE
+	}
+}
+
+is_Polish_speak = {
+	original_tag = POL
+}
+
+is_Chinese_speak = {
+	OR = {
+		tag = CHI
+		tag = PRC
+		tag = XSM
+		tag = SIK
+		tag = GXC
+		tag = SHX
+		tag = MAN
+	}
+}
+
+is_Japanese_country = {
+	original_tag = JAP
+}
+
+is_Soviet_speak = {
+	OR = {
+		original_tag = SOV
+		tag = UKR
+		tag = BLR
+	}
+}
+
+is_Russian_speak = {
+	original_tag = SOV
+}
+
+is_Ukranian_speak = {
+	tag = UKR
+}
+
+is_Belarusian_speak = {
+	tag = BLR
+}
+
+is_Korean_speak = {
+	tag = KOR
+}
+
+is_Italian_speak = {
+	original_tag = ITA
+}
+
+is_English_speak = {
+
+	OR = {
+		original_tag = ENG
+		original_tag = USA
+		tag = AST
+		tag = NZL
+	}
+
+}
+
+CZE_czech_only = {
+	CZE = {
+		owns_state = 9
+		owns_state = 75
+	    NOT = {
+			owns_state = 70
+			owns_state = 71
+		}
+	}
+}
+
+CZE_bohemia_only = {
+	CZE = {
+		owns_state = 9
+	    NOT = {
+			owns_state = 75
+			owns_state = 70
+			owns_state = 71
+		}
+	}
+}
